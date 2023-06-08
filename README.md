@@ -16,7 +16,7 @@
 ## Versão
 Última versão:
 
-    $version_release = 1.0.8
+    $version_release = 1.0.9 - Special Edition
 
 ## Screenshots
 ![systemos](https://github.com/hendrilmendes/SystemOS/blob/main/systemos.PNG)
