@@ -1,0 +1,7 @@
+Usuário e senha de acesso Admin!
+user:admin@empresa.com
+senha:admin
+
+Usuário e senha de acesso Vendedor!
+user:vendedor@empresa.com
+senha:vendedor
