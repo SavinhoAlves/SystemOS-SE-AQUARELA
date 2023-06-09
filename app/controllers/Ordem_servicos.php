@@ -17,7 +17,7 @@ class Ordem_servicos extends CI_Controller {
     public function index() {
 
         $data = array(
-            'titulo' => 'Serviços cadastrados',
+            'titulo' => 'Serviços Cadastrados',
             'styles' => array(
                 'vendor/datatables/dataTables.bootstrap4.min.css',
             ),

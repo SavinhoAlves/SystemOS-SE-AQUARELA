@@ -25,7 +25,7 @@
 
                 <form class="user" method="POST" name="form_edit">
 
-                    <p><strong><i class="fas fa-clock"></i>&nbsp;&nbsp;Última alteração:&nbsp;</strong><?php echo formata_data_banco_com_hora($cliente->cliente_data_alteracao); ?></p>
+                    <p><strong><i class="fas fa-clock"></i>&nbsp;&nbsp;Última Alteração:&nbsp;</strong><?php echo formata_data_banco_com_hora($cliente->cliente_data_alteracao); ?></p>
 
                     <fieldset class="mt-4 border p-2">
 
@@ -58,11 +58,11 @@
                             <div class="col-md-3">
                                 <?php if ($cliente->cliente_tipo == 1): ?>
                                     <label>CPF</label>
-                                    <input type="text" class="form-control form-control-user cpf" name="cliente_cpf" placeholder="<?php echo ($cliente->cliente_tipo == 1 ? 'CPF do cliente' : 'CNPJ do cliente') ?>" value="<?php echo $cliente->cliente_cpf_cnpj; ?>">
+                                    <input type="number" class="form-control form-control-user cpf" name="cliente_cpf" placeholder="<?php echo ($cliente->cliente_tipo == 1 ? 'CPF do cliente' : 'CNPJ do cliente') ?>" value="<?php echo $cliente->cliente_cpf_cnpj; ?>">
                                     <?php echo form_error('cliente_cpf', '<small class="form-text text-danger">', '</small>'); ?>
                                 <?php else: ?>
                                     <label>CNPJ</label>
-                                    <input type="text" class="form-control form-control-user cnpj" name="cliente_cnpj" placeholder="<?php echo ($cliente->cliente_tipo == 1 ? 'CPF do cliente' : 'CNPJ do cliente') ?>" value="<?php echo $cliente->cliente_cpf_cnpj; ?>">
+                                    <input type="number" class="form-control form-control-user cnpj" name="cliente_cnpj" placeholder="<?php echo ($cliente->cliente_tipo == 1 ? 'CPF do cliente' : 'CNPJ do cliente') ?>" value="<?php echo $cliente->cliente_cpf_cnpj; ?>">
                                     <?php echo form_error('cliente_cnpj', '<small class="form-text text-danger">', '</small>'); ?>
                                 <?php endif; ?>
                             </div>
@@ -73,7 +73,7 @@
                                 <?php else: ?>
                                     <label>Inscrição estadual</label>
                                 <?php endif; ?>
-                                <input type="text" class="form-control form-control-user" name="cliente_rg_ie" placeholder="<?php echo ($cliente->cliente_tipo == 1 ? 'RG do cliente' : 'I.E do cliente') ?>" value="<?php echo $cliente->cliente_rg_ie; ?>">
+                                <input type="number" class="form-control form-control-user" name="cliente_rg_ie" placeholder="<?php echo ($cliente->cliente_tipo == 1 ? 'RG do cliente' : 'I.E do cliente') ?>" value="<?php echo $cliente->cliente_rg_ie; ?>">
                                 <?php echo form_error('cliente_rg_ie', '<small class="form-text text-danger">', '</small>'); ?>
                             </div>
 
@@ -88,14 +88,14 @@
                         <div class="form-group row mb-3">
 
                             <div class="col-md-6">
-                                <label>Telefone fixo</label>
-                                <input type="text" class="form-control form-control-user sp_celphones" name="cliente_telefone" placeholder="Telefone fixo" value="<?php echo $cliente->cliente_telefone; ?>">
+                                <label>Telefone Fixo</label>
+                                <input type="number" class="form-control form-control-user sp_celphones" name="cliente_telefone" placeholder="Telefone fixo" value="<?php echo $cliente->cliente_telefone; ?>">
                                 <?php echo form_error('cliente_telefone', '<small class="form-text text-danger">', '</small>'); ?>
                             </div>
 
                             <div class="col-md-6">
-                                <label>Telefone celular</label>
-                                <input type="text" class="form-control form-control-user sp_celphones" name="cliente_celular" placeholder="Celular do cliente" value="<?php echo $cliente->cliente_celular; ?>">
+                                <label>Telefone Celular</label>
+                                <input type="number" class="form-control form-control-user sp_celphones" name="cliente_celular" placeholder="Celular do cliente" value="<?php echo $cliente->cliente_celular; ?>">
                                 <?php echo form_error('cliente_celular', '<small class="form-text text-danger">', '</small>'); ?>
                             </div>
 
@@ -117,7 +117,7 @@
 
                             <div class="col-md-2">
                                 <label>Número</label>
-                                <input type="text" class="form-control form-control-user" name="cliente_numero_endereco" value="<?php echo $cliente->cliente_numero_endereco; ?>">
+                                <input type="number" class="form-control form-control-user" name="cliente_numero_endereco" value="<?php echo $cliente->cliente_numero_endereco; ?>">
                                 <?php echo form_error('cliente_numero_endereco', '<small class="form-text text-danger">', '</small>'); ?>
                             </div>
 
@@ -140,7 +140,7 @@
 
                             <div class="col-md-2">
                                 <label>CEP</label>
-                                <input type="text" class="form-control form-control-user cep" name="cliente_cep" value="<?php echo $cliente->cliente_cep; ?>">
+                                <input type="number" class="form-control form-control-user cep" name="cliente_cep" value="<?php echo $cliente->cliente_cep; ?>">
                                 <?php echo form_error('cliente_cep', '<small class="form-text text-danger">', '</small>'); ?>
                             </div>
 
@@ -169,7 +169,7 @@
                         <div class="form-group row">
 
                             <div class="col-md-4">
-                                <label>Cliente ativo</label>
+                                <label>Cliente Ativo</label>
                                 <select class="custom-select" name="cliente_ativo">
                                     <option value="0" <?php echo ($cliente->cliente_ativo == 0 ? 'selected' : ''); ?>>Não</option>
                                     <option value="1" <?php echo ($cliente->cliente_ativo == 1 ? 'selected' : ''); ?>>Sim</option>

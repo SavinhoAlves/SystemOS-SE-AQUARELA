@@ -81,7 +81,7 @@
                                 <th>Código</th>
                                 <th>Nome</th>
                                 <th>CPF / CNPJ</th>
-                                <th>Tipo de cliente</th>
+                                <th>Tipo de Cliente</th>
                                 <th class="text-center">Ativo</th>
                                 <th class="text-right no-sort pr-2">Ações</th>
                             </tr>

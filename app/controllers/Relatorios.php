@@ -196,7 +196,7 @@ class Relatorios extends CI_Controller {
                 $html .= '<head>';
 
 
-                $html .= '<title>' . $empresa->sistema_nome_fantasia . ' | Relatório de ordens de serviços</title>';
+                $html .= '<title>' . $empresa->sistema_nome_fantasia . ' | Relatório de Serviços</title>';
 
 
                 $html .= '</head>';
@@ -216,7 +216,7 @@ class Relatorios extends CI_Controller {
 
 
                 if ($data_inicial && $data_final) {
-                    $html .= '<p align="center" style="font-size: 12px">Relatório de ordens de serviços realizadas entre as seguintes datas:</p>';
+                    $html .= '<p align="center" style="font-size: 12px">Relatório de serviços realizadas entre as seguintes datas:</p>';
                     $html .= '<p align="center" style="font-size: 12px">' . formata_data_banco_sem_hora($data_inicial) . ' - ' . formata_data_banco_sem_hora($data_final) . '</p>';
                 } else {
                     $html .= '<p align="center" style="font-size: 12px">Relatório de vendas realizadas a partir da data:</p>';
@@ -231,7 +231,7 @@ class Relatorios extends CI_Controller {
 
                 $html .= '<tr>';
 
-                $html .= '<th>Ordem ID</th>';
+                $html .= '<th>Código do Serviço</th>';
                 $html .= '<th>Data</th>';
                 $html .= '<th>Cliente</th>';
                 $html .= '<th>Forma de Pagamento</th>';
