@@ -149,7 +149,7 @@
 
                             <div class="col-md-2">
                                 <label>CEP</label>
-                                <input type="text" class="form-control form-control-user cep" name="cliente_cep" value="<?php echo set_value('cliente_cep'); ?>">
+                                <input id="cep" type="text" class="form-control form-control-user cep" name="cliente_cep" value="<?php echo set_value('cliente_cep'); ?>">
                                 <?php echo form_error('cliente_cep', '<small class="form-text text-danger">', '</small>'); ?>
                             </div>
 
@@ -160,7 +160,7 @@
                             </div>
 
                             <div class="col-md-1">
-                                <label>UF</label>
+                                <label>Estado</label>
                                 <input type="text" class="form-control form-control-user uf" name="cliente_estado" value="<?php echo set_value('cliente_estado'); ?>">
                                 <?php echo form_error('cliente_estado', '<small class="form-text text-danger">', '</small>'); ?>
                             </div>

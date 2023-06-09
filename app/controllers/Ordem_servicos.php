@@ -1,11 +1,4 @@
 <?php
-/*
-SYSTEM OS - VISAOTEC SISTEMAS
-------------------------------
-By: Isaias de Oliveira
-E-mail: visaotec.com@gmail.com
-Todos os direitos reservados
-*/
 defined('BASEPATH') OR exit('Ação não permitida');
 
 class Ordem_servicos extends CI_Controller {
@@ -24,7 +17,7 @@ class Ordem_servicos extends CI_Controller {
     public function index() {
 
         $data = array(
-            'titulo' => 'Serviços Cadastrados',
+            'titulo' => 'Serviços cadastrados',
             'styles' => array(
                 'vendor/datatables/dataTables.bootstrap4.min.css',
             ),
@@ -44,11 +37,6 @@ class Ordem_servicos extends CI_Controller {
     public function add() {
 
         $this->form_validation->set_rules('ordem_servico_cliente_id', '', 'required');
-        $this->form_validation->set_rules('ordem_servico_equipamento', 'Marca', 'trim|required|min_length[2]|max_length[80]');
-        $this->form_validation->set_rules('ordem_servico_marca_equipamento', 'Marca', 'trim|required|min_length[2]|max_length[80]');
-        $this->form_validation->set_rules('ordem_servico_modelo_equipamento', 'Modelo', 'trim|required|min_length[2]|max_length[80]');
-        $this->form_validation->set_rules('ordem_servico_acessorios', 'Acessórios', 'trim|required|max_length[300]');
-        $this->form_validation->set_rules('ordem_servico_defeito', 'Defeito', 'trim|required|max_length[700]');
 
         if ($this->form_validation->run()) {
 
@@ -59,12 +47,6 @@ class Ordem_servicos extends CI_Controller {
                     array(
                 'ordem_servico_cliente_id',
                 'ordem_servico_status',
-                'ordem_servico_equipamento',
-                'ordem_servico_marca_equipamento',
-                'ordem_servico_modelo_equipamento',
-                'ordem_servico_defeito',
-                'ordem_servico_acessorios',
-                'ordem_servico_obs',
                 'ordem_servico_valor_desconto',
                 'ordem_servico_valor_total',
                     ), $this->input->post()
@@ -87,8 +69,8 @@ class Ordem_servicos extends CI_Controller {
             $servico_preco = str_replace('R$', '', $this->input->post('servico_preco'));
             $servico_item_total = str_replace('R$', '', $this->input->post('servico_item_total'));
 
-            $servico_preco = str_replace('.', ',', $servico_preco);
-            $servico_item_total = str_replace('.', ',', $servico_item_total);
+            $servico_preco = str_replace(',', '', $servico_preco);
+            $servico_item_total = str_replace(',', '', $servico_item_total);
 
 
             $qty_servico = count($servico_id);
@@ -120,7 +102,7 @@ class Ordem_servicos extends CI_Controller {
             //Erro de validação
 
             $data = array(
-                'titulo' => 'Cadastrar serviço',
+                'titulo' => 'Prestar Novo Serviço',
                 'styles' => array(
                     'vendor/select2/select2.min.css',
                     'vendor/autocomplete/jquery-ui.css',
@@ -148,7 +130,7 @@ class Ordem_servicos extends CI_Controller {
     public function edit($ordem_servico_id = NULL) {
 
         if (!$ordem_servico_id || !$this->core_model->get_by_id('ordens_servicos', array('ordem_servico_id' => $ordem_servico_id))) {
-            $this->session->set_flashdata('error', 'Serviço não encontrada');
+            $this->session->set_flashdata('error', 'Serviço não encontrado');
             redirect('os');
         } else {
 
@@ -160,12 +142,6 @@ class Ordem_servicos extends CI_Controller {
                 $this->form_validation->set_rules('ordem_servico_forma_pagamento_id', '', 'required');
             }
 
-            $this->form_validation->set_rules('ordem_servico_equipamento', 'Marca', 'trim|required|min_length[2]|max_length[80]');
-            $this->form_validation->set_rules('ordem_servico_marca_equipamento', 'Marca', 'trim|required|min_length[2]|max_length[80]');
-            $this->form_validation->set_rules('ordem_servico_modelo_equipamento', 'Modelo', 'trim|required|min_length[2]|max_length[80]');
-            $this->form_validation->set_rules('ordem_servico_acessorios', 'Acessórios', 'trim|required|max_length[300]');
-            $this->form_validation->set_rules('ordem_servico_defeito', 'Defeito', 'trim|required|max_length[700]');
-
             if ($this->form_validation->run()) {
 
 
@@ -176,12 +152,6 @@ class Ordem_servicos extends CI_Controller {
                     'ordem_servico_cliente_id',
                     'ordem_servico_forma_pagamento_id',
                     'ordem_servico_status',
-                    'ordem_servico_equipamento',
-                    'ordem_servico_marca_equipamento',
-                    'ordem_servico_modelo_equipamento',
-                    'ordem_servico_defeito',
-                    'ordem_servico_acessorios',
-                    'ordem_servico_obs',
                     'ordem_servico_valor_desconto',
                     'ordem_servico_valor_total',
                         ), $this->input->post()
@@ -207,8 +177,8 @@ class Ordem_servicos extends CI_Controller {
                 $servico_preco = str_replace('R$', '', $this->input->post('servico_preco'));
                 $servico_item_total = str_replace('R$', '', $this->input->post('servico_item_total'));
 
-                $servico_preco = str_replace('.', ',', $servico_preco);
-                $servico_item_total = str_replace('.', ',', $servico_item_total);
+                $servico_preco = str_replace(',', '', $servico_preco);
+                $servico_item_total = str_replace(',', '', $servico_item_total);
 
 
                 $qty_servico = count($servico_id);
@@ -240,7 +210,7 @@ class Ordem_servicos extends CI_Controller {
                 //Erro de validação
 
                 $data = array(
-                    'titulo' => 'Atualizar serviço',
+                    'titulo' => 'Atualizar Serviço',
                     'styles' => array(
                         'vendor/select2/select2.min.css',
                         'vendor/autocomplete/jquery-ui.css',
@@ -275,12 +245,12 @@ class Ordem_servicos extends CI_Controller {
 
     public function del($ordem_servico_id = NULL) {
         if (!$ordem_servico_id || !$this->core_model->get_by_id('ordens_servicos', array('ordem_servico_id' => $ordem_servico_id))) {
-            $this->session->set_flashdata('error', 'Serviço não encontrada');
+            $this->session->set_flashdata('error', 'Serviço não encontrado');
             redirect('os');
         }
 
         if ($this->core_model->get_by_id('ordens_servicos', array('ordem_servico_id' => $ordem_servico_id, 'ordem_servico_status' => 0))) {
-            $this->session->set_flashdata('error', 'Não é possível excluir uma Serviço Em aberto');
+            $this->session->set_flashdata('error', 'Não é possível excluir um serviço Em aberto');
             redirect('os');
         }
 
@@ -291,7 +261,7 @@ class Ordem_servicos extends CI_Controller {
     public function imprimir($ordem_servico_id = NULL) {
 
         if (!$ordem_servico_id || !$this->core_model->get_by_id('ordens_servicos', array('ordem_servico_id' => $ordem_servico_id))) {
-            $this->session->set_flashdata('error', 'Serviço não encontrada');
+            $this->session->set_flashdata('error', 'Serviço não encontrado');
             redirect('os');
         } else {
 
@@ -309,7 +279,7 @@ class Ordem_servicos extends CI_Controller {
     public function pdf($ordem_servico_id = NULL) {
 
         if (!$ordem_servico_id || !$this->core_model->get_by_id('ordens_servicos', array('ordem_servico_id' => $ordem_servico_id))) {
-            $this->session->set_flashdata('error', 'Serviço não encontrada');
+            $this->session->set_flashdata('error', 'Serviço não encontrado');
             redirect('os');
         } else {
 
@@ -327,7 +297,7 @@ class Ordem_servicos extends CI_Controller {
             $html .= '<head>';
 
 
-            $html .= '<title>' . $empresa->sistema_nome_fantasia . ' | Impressão do Serviço</title>';
+            $html .= '<title>' . $empresa->sistema_nome_fantasia . ' | Impressão de Serviço</title>';
 
 
             $html .= '</head>';
@@ -347,7 +317,7 @@ class Ordem_servicos extends CI_Controller {
 
             //Dados do cliente
 
-            $html .= '<p align="right" style="font-size: 12px">Serviço de Nº&nbsp;' . $ordem_servico->ordem_servico_id . '</p>';
+            $html .= '<p align="right" style="font-size: 12px">O.S Nº&nbsp;' . $ordem_servico->ordem_servico_id . '</p>';
 
             $html .= '<p>'
                     . '<strong>Cliente: </strong>' . $ordem_servico->cliente_nome_completo . '<br/>'

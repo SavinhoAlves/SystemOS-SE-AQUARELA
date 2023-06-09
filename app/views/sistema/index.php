@@ -153,8 +153,8 @@
                     <div class="form-group row mb-3">
 
                         <div class="col-md-12">
-                            <label>Mensagem no modúlo de Servico e Venda</label>
-                            <textarea class="form-control form-control-user" name="sistema_txt_ordem_servico" placeholder="Texto do modúlo de serviço e venda"><?php echo $sistema->sistema_txt_ordem_servico; ?></textarea>
+                            <label>Mensagem no módulo de Servico e Venda</label>
+                            <textarea class="form-control form-control-user" name="sistema_txt_ordem_servico" placeholder="Texto do módulo de serviço e venda"><?php echo $sistema->sistema_txt_ordem_servico; ?></textarea>
                             <?php echo form_error('sistema_txt_ordem_servico', '<small class="form-text text-danger">', '</small>'); ?>
                         </div>
                     </div>

@@ -1,11 +1,4 @@
 <?php
-/*
-SYSTEM OS - VISAOTEC SISTEMAS
-------------------------------
-By: Isaias de Oliveira
-E-mail: visaotec.com@gmail.com
-Todos os direitos reservados
-*/
 defined('BASEPATH') OR exit('Ação não permitida');
 
 class Servicos extends CI_Controller {

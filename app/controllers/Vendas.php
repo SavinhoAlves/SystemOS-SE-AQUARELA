@@ -1,11 +1,4 @@
 <?php
-/*
-SYSTEM OS - VISAOTEC SISTEMAS
-------------------------------
-By: Isaias de Oliveira
-E-mail: visaotec.com@gmail.com
-Todos os direitos reservados
-*/
 defined('BASEPATH') OR exit('Ação não permitida');
 
 class Vendas extends CI_Controller {
@@ -84,8 +77,8 @@ class Vendas extends CI_Controller {
             $produto_preco_venda = str_replace('R$', '', $this->input->post('produto_preco_venda'));
             $produto_item_total = str_replace('R$', '', $this->input->post('produto_item_total'));
 
-            $produto_preco = str_replace('.', ',', $produto_preco_venda);
-            $produto_item_total = str_replace('.', ',', $produto_item_total);
+            $produto_preco_venda = str_replace(',', '', $produto_preco_venda);
+            $produto_item_total = str_replace(',', '', $produto_item_total);
 
 
             $qty_produto = count($produto_id);
@@ -207,8 +200,8 @@ class Vendas extends CI_Controller {
                 $produto_preco_venda = str_replace('R$', '', $this->input->post('produto_preco_venda'));
                 $produto_item_total = str_replace('R$', '', $this->input->post('produto_item_total'));
 
-                $produto_preco = str_replace('.', ',', $produto_preco_venda);
-                $produto_item_total = str_replace('.', ',', $produto_item_total);
+                $produto_preco_venda = str_replace(',', '', $produto_preco_venda);
+                $produto_item_total = str_replace(',', '', $produto_item_total);
 
 
                 $qty_produto = count($produto_id);

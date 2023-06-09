@@ -151,7 +151,7 @@
                             </div>
 
                             <div class="col-md-1">
-                                <label>UF</label>
+                                <label>Estado</label>
                                 <input type="text" class="form-control form-control-user uf" name="cliente_estado" value="<?php echo $cliente->cliente_estado; ?>">
                                 <?php echo form_error('cliente_estado', '<small class="form-text text-danger">', '</small>'); ?>
                             </div>
